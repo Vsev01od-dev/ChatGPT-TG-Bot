@@ -1,6 +1,3 @@
-"""
-Сервис для работы с историей диалогов: сохранение, получение, очистка.
-"""
 from typing import List, Tuple
 from sqlalchemy import select, desc, delete
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -67,6 +64,7 @@ class HistoryService:
         Returns:
             Список последних сообщений в формате для OpenAI API
         """
+        
         # Используем лимит из настроек, если не указан явно
         if limit is None:
             limit = settings.CHAT_WINDOW_LIMIT
@@ -102,6 +100,7 @@ class HistoryService:
         Returns:
             Количество удаленных записей
         """
+        
         stmt = (
             delete(DialogHistory)
             .where(DialogHistory.user_id == user_id)
@@ -121,7 +120,6 @@ class HistoryService:
     ) -> int:
         """
         Подсчитывает количество сообщений пользователя.
-        Может использоваться для проверки лимитов.
 
         Args:
             session: Асинхронная сессия БД
