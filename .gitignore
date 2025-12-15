@@ -1,0 +1,11 @@
+.env
+.env.prod
+__pycache__/
+*.db
+*.log
+*.sqlite
+test_basic.py
+test_fixes.py
+test_models.py
+.pytest_cache
+.idea

@@ -1,0 +1,6 @@
+aiogram==3.18
+sqlalchemy[asyncio]==2.0.36
+aiosqlite==0.20.0
+openai==1.66
+pydantic-settings==2.7
+python-dotenv==1.0.1
